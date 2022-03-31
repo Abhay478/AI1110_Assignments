@@ -1,4 +1,11 @@
-\documentclass[11pt, oneside]{amsart}   	% use "amsart" instead of "article" for AMSLaTeX format
+\documentclass[11pt, oneside, twocolumn]{amsart}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry} 
+\usepackage{polynom}              		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		\documentclass[11pt, oneside, twocolumn]{amsart}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{geometry} 
 \usepackage{polynom}              		% See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
@@ -6,6 +13,78 @@
 \usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{enumitem}
+ \usepackage{mathtools}
+ %SetFonts
+
+%SetFonts
+
+
+\title{Assignment 1 : Question 11 (a)}
+\author{Abhay Shankar K : cs21btech11001}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+Given:
+\begin{itemize}
+	\item $f(x) = x^3 + (kx + 8)x + k$ 
+	\item Sum of remainders of $f(x)$ after dividing by $(x + 1)$ and $(x - 2)$ is $1$
+\end{itemize}
+Find:
+\begin{itemize}
+	\item Remainders of $f(x)$ after dividing by $(x + 1)$ and $(x - 2)$
+	\item The value of $k$
+\end{itemize}
+
+\textbf{Solution :}
+
+By the remainder theorem, \\
+	\quad The remainder after dividing a polynomial $p(x)$ by $(x - r)$ is equal to $p(r)$.
+
+	 Therefore,
+	 
+	\begin{math}
+  		f(x)\ \mod\ (x + 1) = f(-1) \\
+  		f(x)\ \mod\ (x - 2) = f(2) \\
+				\\
+ 		f(-1) = (-1)^3 + (k(-1) + 8)*(-1) + k \\
+		i.e. \quad \ = -1 + k - 8 + k \\
+		i.e. \quad \ = \underline{2k - 9}  \\
+		\\
+		f(2) \ = 2^3 + (2k + 8)*2 + k \\
+		i.e. \quad = 8 + 4k + 16 + k \\
+		i.e. \quad  = \underline{5k + 24}
+				  \\
+	\end{math}
+		  
+	Given that $(2k - 9) + (5k + 24) = 1$
+	\\	
+	Rearranging, we get $7k = -14$ \\
+		\\
+	Therefore \underline{k = -2}\\
+		\\
+	Substituting the value of $k$, we get \\
+	\begin{math}
+		2k - 9 = -13 \\
+		5k + 24 = 14 \\
+		\\
+\text{Therefore, the remainders are :}
+\\
+	f(x)\ \mod\ (x + 1) = -13 \\
+	f(x)\ \mod\ (x - 2) = 14 \\
+		\end{math}
+\\
+		
+	 
+
+
+\end{document}  
 \usepackage{amssymb}
 \usepackage{gensymb}
 \usepackage{amsmath}
