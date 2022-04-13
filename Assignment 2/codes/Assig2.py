@@ -4,6 +4,7 @@ import numpy as np
 from numpy import linalg as la
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d as mpl
+from fractions import Fraction
 
 """
 Question 15 (b):
@@ -44,5 +45,9 @@ plt3d.plot(0, 0, 0, marker = 'o', markerfacecolor='red', markeredgecolor='red')
 
 plt3d.quiver(0, 0, 0, intersection_point[0], intersection_point[1], intersection_point[2], arrow_length_ratio=0.5, edgecolors='red')
 plt3d.plot(intersection_point[0], intersection_point[1], intersection_point[2], marker = 'o', markerfacecolor='red', markeredgecolor='red')
+
+plt3d.text(0, 0, 0, "(0, 0, 0)")
+plt3d.text(intersection_point[0], intersection_point[1], intersection_point[2],
+           "({0:.3g}, {1:.3g}, {2:.3g})".format(intersection_point[0], intersection_point[1], intersection_point[2], '.2f'))
 
 plt.show()
