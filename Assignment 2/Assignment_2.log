@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  13 APR 2022 11:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  13 APR 2022 11:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -967,24 +967,14 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Reference `given' on page 1 undefined on input line 74.
-
-
-LaTeX Warning: Reference `Gen_plane' on page 1 undefined on input line 74.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 74--75
 []\OT1/cmr/m/n/10.95 We can rep-re-sent the given plane
  []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 74--75
+Underfull \hbox (badness 3657) in paragraph at lines 74--75
 []$ \OT1/cmr/m/n/10.95 us-ing nor-mal form from
  []
-
-
-LaTeX Warning: Reference `4-vec' on page 1 undefined on input line 84.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -993,7 +983,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<./images//Graph_3D.png, id=24, 462.528pt x 346.896pt>
+<./images//Graph_3D.png, id=33, 462.528pt x 346.896pt>
 File: ./images//Graph_3D.png Graphic file (type png)
 <use ./images//Graph_3D.png>
 Package pdftex.def Info: ./images//Graph_3D.png  used on input line 102.
@@ -1001,19 +991,13 @@ Package pdftex.def Info: ./images//Graph_3D.png  used on input line 102.
  [2
 
  <./images//Graph_3D.png>] (./Assignment_2.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Assignment_2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  23795 strings out of 478994
  419673 string characters out of 5858184
- 724755 words of memory out of 5000000
+ 724956 words of memory out of 5000000
  40830 multiletter control sequences out of 15000+600000
  413953 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1029,10 +1013,10 @@ cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Assignment_2.pdf (2 pages, 141893 bytes).
+Output written on Assignment_2.pdf (2 pages, 141844 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  12 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
