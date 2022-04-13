@@ -26,11 +26,11 @@ solution of the vector form of the plane equation.
 """
 #finding the length of vector, mathematical verifictation
 d = -39
-N = np.array([3, -4, -12])
-c = math.fabs(d)/(N @ N)
+N = np.array([3, -4, -12]) #normal vector
+c = math.fabs(d)/(N @ N) 
 
 intersection_point = c * N
-nrm = la.norm(intersection_point)
+nrm = la.norm(intersection_point) #calculates norm
 print(nrm)
 
 
