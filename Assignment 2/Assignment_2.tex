@@ -1,8 +1,6 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-
-\documentclass[journal,11pt,twocolumn]{IEEEtran}
-
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{gensymb}
 \usepackage{polynom}
 \usepackage{amssymb}
@@ -52,58 +50,77 @@
 	\newcommand{\question}{\noindent \textbf{Question: }}
 
 	\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-	\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-
-	\makeatletter
-	\@addtoreset{figure}{problem}
-	\makeatother
-	\let\StandardTheFigure\thefigure
 	\let\vec\mathbf
+
 
 	\question
 
+
 	Find the length of the perpendicular from the origin to the plane
-	\begin{align} \label{given}
+	
+	\begin{align} 
+			\label{given}
 		\vec{r} \cdot \brak{3i - 4j - 12k} + 39 = 0
 	\end{align}
 
-	\solution
-	Clearly, the length of the perpendicular from a plane passing through some point is the distance of that point from the plane.
 
+	\solution
+	
+	
+	Clearly, the length of the perpendicular from a plane passing through some point is the distance of that point from the plane.
 	The normal form of a plane is an equation of the form:
-	\begin{align}\label{Gen_plane}
-		\vec{A}\vec{x} = D
+	
+	\begin{align}
+		\myvec{\vec{A} & D} \myvec{\vec{x} \\ 1} = 0
+			\label{Gen_plane}
 	\end{align}
+
 
 	Where :
-	\begin{itemize}
-		\item $\vec{A} = \myvec{a & b & c}$
-		\item $\vec{x} = \myvec{x \\ y \\ z}$, called the point vector
-		\item D is some scalar constant.
-	\end{itemize}
-
-	We can represent the given plane \brak{equation ~\eqref{given}} using normal form from \brak{equation ~\eqref{Gen_plane}} thus :
+	
 	\begin{align}
-        		\label{normal_form}
-		\myvec{3 & -4 & -12} \vec{x} & = -39\\
-		\intertext{The formula for the distance of a point from a plane is :}
-		\label{4-vec}
-		Distance & = \frac{1}{\norm{\vec{A}}}  \abs{\myvec{a & b & c & D} \cdot \myvec{x \\ y \\ z \\1}}
-		\intertext{The input parameters for equation $~\eqref{4-vec}$ are:}
-		\label{A_sub}
-		\vec{A} &= \myvec{a & b & c} =  \myvec{3 & -4 & -12}\\
-		\label{x_sub}
-		\vec{x} &= \myvec{x \\ y \\ z} =  \myvec{0 \\ 0 \\ 0}\\
-		\label{D_sub}
-		D &= -39
-		\intertext{Upon substitution of equations $ \eqref{A_sub}, ~\eqref{x_sub}, ~\eqref{D_sub}$ into equation $\eqref{4-vec}$, }
-		Distance &= \frac{1}{\norm{\vec{A}}}  \abs{\myvec{a & b & c & D} \cdot \myvec{x \\ y \\ z \\1}}\\
- 				&= \frac{\abs{\myvec{3 & -4 & -12 & -39} \cdot \myvec{0 \\ 0 \\ 0 \\1}}}{\sqrt{3^2 + \brak{-4}^2 + \brak{-12}^2}}  \\
- 				&= \frac{\abs{-39}}{\sqrt{169}}\\
- 				&= \underline{3} \text{ units}
+		\vec{A} = \myvec{a & b & c}, 
+		\vec{x} = \myvec{x \\ y \\ z}
 	\end{align}
 
+
+	We can represent the given plane \brak{equation ~\eqref{given}} using normal form from equation ~\eqref{Gen_plane} thus :
+	
+	\begin{align}
+		\myvec{3 & -4 & -12 & 39} \myvec{\vec{x} \\ 1} = 0
+			\label{pln_nrm}
+	\end{align}
+	
+	
+	The formula for the distance of a point from a plane is :
+	
+	\begin{align}
+		Distance = \frac{\abs{\myvec{\vec{A} & D} \myvec{\vec{x} \\ 1}}}{\norm{\vec{A}}}
+			\label{dist_form}
+	\end{align}
+	
+	
+	The input parameters are :
+	
+	\begin{align}
+		\myvec{\vec{A} & D} = \myvec{3 & -4 & -12 & 39},
+		\vec{x} = \myvec{0 \\ 0 \\ 0}
+			                         \label{sub}
+	\end{align}
+	
+	
+	Substituting $~\eqref{sub}$ in $~\eqref{dist_form}$,
+	
+	\begin{align}
+		Distance &= \frac{\abs{\myvec{3 & -4 & -12 & 39} \myvec{0 \\ 0 \\ 0 \\ 1}}}{\norm{\myvec{3 & -4 & -12}}}  \\
+				\nonumber\\
+				&= \frac{39}{13} \\
+				&= 3
+	\end{align}
+		
+		
 	$\therefore$ The length of the perpendicular from the origin to the plane \brak{equation ~\eqref{given}} is \underline{$3$} units.
+
 
 	\begin{figure}[h!]
 		\centering
