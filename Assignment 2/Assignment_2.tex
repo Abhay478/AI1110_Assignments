@@ -71,7 +71,7 @@
 	The normal form of a plane is an equation of the form:
 	
 	\begin{align}
-		\myvec{\vec{A} & D} \myvec{\vec{x} \\ 1} = 0
+		\vec{n}^\top \vec{x} = c
 			\label{Gen_plane}
 	\end{align}
 
@@ -79,7 +79,7 @@
 	Where :
 	
 	\begin{align}
-		\vec{A} = \myvec{a & b & c}, 
+		\vec{n} = \myvec{p \\ q \\ r}, 
 		\vec{x} = \myvec{x \\ y \\ z}
 	\end{align}
 
@@ -87,7 +87,7 @@
 	We can represent the given plane \brak{equation ~\eqref{given}} using normal form \brak{equation ~\eqref{Gen_plane}} thus :
 	
 	\begin{align}
-		\myvec{3 & -4 & -12 & 39} \myvec{\vec{x} \\ 1} = 0
+		\myvec{3 \\ -4 \\ -12}^\top \vec{\vec{x}} = -39
 			\label{pln_nrm}
 	\end{align}
 	
@@ -95,7 +95,7 @@
 	The formula for the distance of a point from a plane is :
 	
 	\begin{align}
-		Distance = \frac{\abs{\myvec{\vec{A} & D} \myvec{\vec{x} \\ 1}}}{\norm{\vec{A}}}
+		Distance = \frac{\abs{\vec{n}^\top \vec{x} - D}}{\norm{\vec{n}}}
 			\label{dist_form}
 	\end{align}
 	
@@ -103,8 +103,9 @@
 	The input parameters are :
 	
 	\begin{align}
-		\myvec{\vec{A} & D} = \myvec{3 & -4 & -12 & 39},
-		\vec{x} = \myvec{0 \\ 0 \\ 0}
+		\vec{n} = \myvec{3 \\ -4 \\ -12},
+		\vec{x} = \myvec{0 \\ 0 \\ 0},
+		c = -39
 			\label{sub}
 	\end{align}
 	
@@ -112,7 +113,7 @@
 	Substituting $~\eqref{sub}$ in $~\eqref{dist_form}$,
 	
 	\begin{align}
-		Distance &= \frac{\abs{\myvec{3 & -4 & -12 & 39} \myvec{0 \\ 0 \\ 0 \\ 1}}}{\norm{\myvec{3 & -4 & -12}}}  \\
+		Distance &= \frac{\abs{\myvec{3 \\ -4 \\ -12}^\top \myvec{0 \\ 0 \\ 0} + 39}}{\norm{\myvec{3 \\ -4 \\ -12}}}  \\
 				\nonumber\\
 				&= \frac{39}{13} \\
 				&= 3
