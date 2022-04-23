@@ -1,0 +1,154 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{gensymb}
+\usepackage{polynom}
+\usepackage{amssymb}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage[misc]{ifsym}
+
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[applemac]{inputenc}
+\usepackage{tikz}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  
+\usepackage{lscape}     
+\usepackage{tfrupee}
+\usepackage{parskip}
+
+\pagecolor{white}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+
+\begin{document}
+
+	\title{Assignment 3 : Example 9}
+		\author{ Abhay Shankar K : cs21btech11001}
+
+		\maketitle
+
+		\bigskip
+
+	\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+	\providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
+	\providecommand{\abs}[1]{\left\vert#1\right\vert}
+	\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+	\newcommand{\solution}{\noindent \textbf{Solution: }}
+	\newcommand{\question}{\noindent \textbf{Question: }}
+
+	\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+	\let\vec\mathbf
+
+
+	\question
+	
+	
+	Consider the frequency distribution table (given below), which gives the weights of $38$ students in a class.
+	
+	\begin{enumerate}[label = \brak{\textbf{\roman*}}]
+	
+		\item Find the probability that the weight of a student in a class lies in the interval $46 - 50$.
+		
+		\item Give two events in this context, one having probability $0$, and the other having probability $1$.
+		
+	\end{enumerate}
+	
+	
+	\begin{table}[!htb]
+	
+		\centering
+		
+		\caption{Distribution of weights of students in a class}
+		\input{tables/assig3}
+		
+		
+		\label{table : given_table}
+		
+	\end{table}
+	
+	
+	\solution
+	
+	\begin{enumerate}[label = \brak{\textbf{\roman*}}]
+	\item
+	
+	Let us define a random variable X, which represents the weight class of a student. The range of X and the corresponding weight class is given in the table below.
+	
+	\begin{table}[h!tb]
+	
+		\centering
+		
+		\caption{Range of X mapped to weight classes from ~\ref{table : given_table}}
+		\input{tables/rand_var}
+		
+		
+		\label{table : range_table}
+		
+	\end{table}
+	
+	
+	\begin{align}
+		\therefore P_X \brak{4} = \frac{3}{38} = 0.079
+	\end{align}
+	
+	
+	The probability that the weight of a student is in the weight class \brak{46 - 50} is $\underline{0.079}.$ 
+		
+	
+	\item
+	
+	\begin{itemize}
+	
+		\item The probability that the weight of a student is greater that 75 is $0$.
+		
+		\item The probability that the weight of a student is in the interval \sbrak{31, 75} is $1$.
+	
+	\end{itemize}
+	
+	\end{enumerate}
+	
+
+\end{document}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
