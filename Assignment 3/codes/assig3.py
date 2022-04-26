@@ -1,10 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 lst = []
 x = []
+read = pd.read_excel('./tables/assig3.xlsx')
+raw_data = np.array(read)
+freq = []
 
-freq = [9, 5, 14, 3, 1, 2, 2, 1, 1]
+for row in raw_data:
+    freq.append(row[1])
+    
 i = 31
 for k in freq:
     x = np.linspace(i, i + 4, k)
