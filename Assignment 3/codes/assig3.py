@@ -4,7 +4,7 @@ import pandas as pd
 
 lst = np.array([])
 x = []
-read = pd.read_excel('/Users/abhay/Latex/tables/assig3.xlsx')
+read = pd.read_excel('./assig3.xlsx')
 raw_data = np.array(read)
 freq = [row[1] for row in raw_data]
 
