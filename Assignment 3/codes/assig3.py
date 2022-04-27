@@ -14,9 +14,6 @@ x = [np.linspace(bin[i], bin[i + 1] - 1, freq[i]) for i in range(9)]
 
 lst = [np.concatenate(tuple(x))]
 
-print(lst)
-
-
 plt.hist(x=lst[0], bins=bin, alpha=0.7, rwidth=0.85, color = 'brown', range=(31, 75))
 
 plt.grid(axis='y', alpha = 0.3)
