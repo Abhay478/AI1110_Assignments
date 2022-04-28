@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-read = pd.read_excel('/Users/abhay/Latex/tables/assig3.xlsx')
+read = pd.read_excel('./tables/assig3.xlsx') #directory structure obscured
 raw_data = np.array(read)
 freq = np.array(raw_data[1][1:])
 
-read = pd.read_excel('/Users/abhay/Latex/tables/rand_var.xlsx')
+read = pd.read_excel('./tables/rand_var.xlsx') #directory structure obscured
 raw_data = np.array(read)
 bin = np.array(raw_data[0][1:])
 #alternatively, bin = np.array([5 * (i + 6) + 1 for i in range(9)]). Excel read vs. Generator, excel read preferable.
