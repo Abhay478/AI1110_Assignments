@@ -1,0 +1,182 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{gensymb}
+\usepackage{polynom}
+\usepackage{amssymb}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage[misc]{ifsym}
+
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[applemac]{inputenc}
+\usepackage{tikz}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  
+\usepackage{lscape}     
+\usepackage{tfrupee}
+\usepackage{parskip}
+
+\pagecolor{white}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}  
+\graphicspath{{./images/}}
+
+\begin{document}
+
+	\title{Assignment 4 : Example 13}
+		\author{ Abhay Shankar K : cs21btech11001}
+
+		\maketitle
+
+		\bigskip
+
+	\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+	\providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
+	\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+	\providecommand{\abs}[1]{\left\vert#1\right\vert}
+	\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+	\newcommand{\solution}{\noindent \textbf{Solution: }}
+	\newcommand{\question}{\noindent \textbf{Question: }}
+	\providecommand{\pr}[2]{\ensuremath{P_{#1}\left(#2\right)}}
+	\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+	\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+	\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+
+	\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+	\let\vec\mathbf
+
+
+	\question
+	
+	A committee of two persons is selected from two men and two women. Find the probability that the committee will have :
+	\begin{enumerate}[label = \brak{\textbf{\roman*}}]
+		
+		\item no men
+		
+		\item one man
+		
+		\item two men
+		
+	\end{enumerate}
+	
+	
+	\solution
+	
+	Let the random variable X represent the number of men in the committee.
+	
+	\begin{table}[h!tb]
+	
+		\centering
+		
+		\caption{Range of X}
+		\input{tables/assig4_rand}
+		
+		
+		\label{table : range_table}
+		
+	\end{table}
+
+	Let the set of possible candidates for the committee, i.e. the sample space, be denoted as S.
+	
+	\begin{align}
+		S = \cbrak{m_1, m_2, w_1, w_2}
+		 	\label{sample}
+	\end{align}
+	
+	where \sbrak{m_i} are men and \sbrak{w_i} are women.
+	
+	
+	Define the relation R on the set S to be :
+	
+	\begin{align}
+		R = \cbrak{\brak{a, b} | \text{ a and b are both in the committee}}
+			\label{relation}
+	\end{align}
+	
+	R is also clearly the set of all subsets of S \brak{equation ~\eqref{sample}} of cardinality $2$.
+
+	In roster form, we can represent the relation \brak{equation ~\eqref{relation}} as follows.
+	
+	
+	\begin{align}
+		R = \{\brak{w_1, w_2}, \brak{w_1, m_2}, \nonumber 
+			\\
+			\brak{m_1, w_2}, \brak{w_1, m_1}, \nonumber 
+			\\
+			\brak{m_2, w_2}, \brak{m_1, m_2}\}
+				\label{roster}
+	\end{align}
+		
+	Therefore, upon reviewing ~\eqref{roster}, the frequency distribution of the number of men in the committee \brak{X} is as given in table ~\ref{table : freq_table}.
+	
+	\begin{table}[h!t]
+	
+		\centering
+		
+		\caption{Frequency of X}
+		\input{tables/dist_assig4}
+		
+		
+		\label{table : freq_table}
+		
+	\end{table}
+	
+	
+	The probabilities are then :
+	
+	\begin{enumerate}[label = \brak{\textbf{\roman*}}]
+
+	\item $\pr{X}{0} = \frac{1}{6}$
+	
+	\item $\pr{X}{1} = \frac{4}{6} = \frac{2}{3}$
+	
+	\item $\pr{X}{2} = \frac{1}{6}$
+	
+	\end{enumerate}
+	
+	
+	\textbf{Alternatively :}
+	
+	
+	\begin{align}
+		\pr{X}{r} = \frac{\brak{\comb{2}{r}}^2}{\comb{4}{2}}
+			\label{comb_form}
+	\end{align}
+	
+	Upon substitution of $r \in \cbrak{0, 1, 2}$ we get the same result as above.
+	
+	\begin{enumerate}[label = \brak{\textbf{\roman*}}]
+
+		\item $\pr{X}{0} = \frac{1}{6}$
+	
+		\item $\pr{X}{1} = \frac{4}{6} = \frac{2}{3}$
+	
+		\item $\pr{X}{2} = \frac{1}{6}$
+	
+	\end{enumerate}
+
+	
+\end{document}
+	
+	
+	
+	
+	
+	
+	
