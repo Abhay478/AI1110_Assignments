@@ -21,10 +21,10 @@ for com in R:
     if 'm1' in com and 'm2' in com:
         freq[2] += 1
         
-print(freq)
+print("The frequency distribution is given by :", freq)
 
 #The histogram for the same is not very informative, and hence has been omitted from the pdf.
-read = pd.read_excel('/Users/abhay/Latex/tables/assig4_fused.xlsx')
+read = pd.read_excel('./tables/assig4_fused.xlsx')
 raw_data = np.array(read)
 freq = np.array(raw_data[2][1:])
 
