@@ -23,7 +23,7 @@ for com in R:
         
 print("The frequency distribution is given by :", freq)
 
-#The histogram for the same is not very informative, and hence has been omitted from the pdf.
+#The histogram for the same is not very informative, and hence has been omitted from the pdf. It is present in the figs sub-directory.
 read = pd.read_excel('./tables/assig4_fused.xlsx')
 raw_data = np.array(read)
 freq = np.array(raw_data[2][1:])
