@@ -7,8 +7,7 @@ count = 0
 #tried with 10 ** 5, too much variation
 #loop is slow, but no alternative found
 for i in range(10 ** 6):
-    select = tuple(random.sample(range(10), 4))
-    if select == correct:
+    if tuple(random.sample(range(10), 4)) == correct:
         count += 1
 
 print(count / 10 ** 6)
