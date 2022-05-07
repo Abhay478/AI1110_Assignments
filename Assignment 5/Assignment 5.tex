@@ -1,0 +1,179 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{gensymb}
+\usepackage{polynom}
+\usepackage{amssymb}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage[misc]{ifsym}
+%\setlength{\columnseprule}{1pt}
+%\def\columnseprulecolor{\color{blue}}
+
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[applemac]{inputenc}
+\usepackage{tikz}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  
+\usepackage{lscape}     
+\usepackage{tfrupee}
+\usepackage{parskip}
+
+\pagecolor{white}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}  
+\graphicspath{{./images/}}
+
+\begin{document}
+
+	\title{Assignment 5 : Miscellaneous Exercise 10}
+		\author{ Abhay Shankar K : cs21btech11001}
+
+		\maketitle
+
+		\bigskip
+
+	\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+	\providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
+	\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+	\providecommand{\abs}[1]{\left\vert#1\right\vert}
+	\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+	\newcommand{\solution}{\noindent \textbf{Solution: }}
+	\newcommand{\question}{\noindent \textbf{Question: }}
+	\providecommand{\pr}[2]{\ensuremath{P_{#1}\left(#2\right)}}
+	\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+	\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+	\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+
+	\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+	\let\vec\mathbf
+
+
+	\question
+	
+	
+	The number lock of a suitcase has $4$ wheels, each labelled with ten digits i.e. $0$ to $9$. The lock opens with a sequence of four digits with no repeats. What is the probability of a person getting the right sequence to open the suitcase?
+	
+	
+	\solution
+	
+	
+	Let $U = \cbrak{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}$ be the sample space.
+	
+	
+	Let the correct sequence $C = c_1 c_2 c_3 c_4$, and let the selected sequence $S = s_1 s_2 s_3 s_4$. 
+	
+	
+	Let the random variables $X_1, X_2, X_3, X_4$ represent the boolean equality of the digits in the selected sequences, i.e. ,
+	
+	
+	\begin{align}
+		\forall i \in &\sbrak{4}, \nonumber \\
+		c_i &= s_i \implies X_i = 1 \nonumber \\
+		c_i &\neq s_i \implies X_i = 0 
+			\label{rand}
+	\end{align}
+	
+	
+	$\therefore \textbf{Required value}  = \pr{X_1}{1} \times \pr{X_2}{1} \times \pr{X_3}{1} \times \pr{X_4}{1}$
+	
+	
+	Progressing in ascending order,
+	
+	
+	\begin{align}
+		\pr{X_1}{1} = \frac{1}{\abs{U}} 
+			\label{1sub} \\
+		\pr{X_2}{1} = \frac{1}{\abs{U - \cbrak{c_1}}} 
+			\label{2sub} \\
+		\pr{X_3}{1} = \frac{1}{\abs{U - \cbrak{c_1, c_2}}} 
+			\label{3sub} \\
+		\pr{X_4}{1} = \frac{1}{\abs{U - \cbrak{c_1, c_2, c_3}}} 
+			\label{4sub}
+	\end{align}
+	
+	
+	Substituting the values into equations ~\eqref{1sub}, ~\eqref{2sub}, ~\eqref{3sub} and ~\eqref{4sub}, 
+	
+	
+	\begin{align}
+		\pr{X_1}{1} = \frac{1}{10} 
+			\label{1val} \\
+		\pr{X_2}{1} = \frac{1}{9} 
+			\label{2val} \\
+		\pr{X_3}{1} = \frac{1}{8} 
+			\label{3val} \\
+		\pr{X_4}{1} = \frac{1}{7} 
+			\label{4val}
+	\end{align}
+	
+	
+	Multiplying ~\eqref{1val}, ~\eqref{2val}, ~\eqref{3val} and ~\eqref{4val},
+	
+	
+	\begin{align}
+		\textbf{Required value}  &= \frac{1}{10 \cdot 9 \cdot 8 \cdot 7} \nonumber \\
+						&= \underline{1.98 \cdot 10^{-4}} 
+						\label{result}
+	\end{align}
+	
+	
+	\textbf{Alternatively,}
+	
+	
+	We know that the number of sequences of $4$ digits formed from among $10$ digits without repetitions is
+	
+	
+	\begin{align}
+		N = \perm{10}{4} = 5040
+			\label{formula}
+	\end{align}
+	
+	
+	So, the probability of the selected sequence matching the correct one is 
+	
+	
+	\begin{align}
+		\frac{1}{N} &= \frac{1}{\perm{10}{4}} \nonumber \\
+				&= \underline{1.98 \cdot 10^{-4}}
+				\label{alt_result}
+	\end{align}
+	
+	
+	Therefore, the probability of a person getting the right sequence to open the suitcase is $ \underline{1.98 \cdot 10^{-4}}$.
+	
+	
+	\begin{table}[t]
+	
+		\centering
+		\caption{Results of Python simulation}
+		\input{tables/assig5_dist}
+		
+		\label{the_table}
+		
+	\end{table}
+		
+	
+\end{document}
+	
+	
+	
+	
+	
+	
+	
