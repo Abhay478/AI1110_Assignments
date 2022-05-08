@@ -1,0 +1,174 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{gensymb}
+\usepackage{polynom}
+\usepackage{amssymb}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage[misc]{ifsym}
+%\setlength{\columnseprule}{1pt}
+%\def\columnseprulecolor{\color{blue}}
+
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[applemac]{inputenc}
+\usepackage{tikz}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  
+\usepackage{lscape}     
+\usepackage{tfrupee}
+\usepackage{parskip}
+
+\pagecolor{white}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}  
+\graphicspath{{./images/}}
+
+\begin{document}
+
+	\title{Assignment 6 : Example 12}
+		\author{ Abhay Shankar K : cs21btech11001}
+
+		\maketitle
+
+		\bigskip
+
+	\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+	\providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
+	\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+	\newcommand{\solution}{\noindent \textbf{Solution: }}
+	\newcommand{\question}{\noindent \textbf{Question: }}
+	\providecommand{\pr}[2]{\ensuremath{P_{#1}\left(#2\right)}}
+	
+	
+	\question
+	
+	Three coins are tossed simultaneously. Consider the events :
+	
+	\begin{itemize}
+	
+		\item E : Three heads or three tails
+		
+		\item F : At least two heads
+		
+		\item G : At most two heads
+		
+	\end{itemize}
+	
+	Which pairs of events are independent, and which are dependent?	
+	
+	
+	\solution
+	
+	Let the random variable X represent the number of heads among the three tossed coins. 
+	
+	$\therefore X \in \cbrak{0, 1, 2, 3}$	
+	
+	Reframing the events in terms of X, 
+	
+	\begin{itemize}
+	
+		\item E : $X \in \cbrak{0, 3}$
+		
+		\item F : $X \in \cbrak{2, 3}$
+		
+		\item G : $X \in \cbrak{0, 1, 2}$
+		
+	\end{itemize}
+	
+	The probability mass function of X is as follows.
+	
+	\begin{figure}[h!]
+	
+		\caption{Probability mass function for X}
+		
+		\includegraphics[width = \columnwidth]{assig6_pmf}
+		
+			\label{pmf}
+	
+	\end{figure}
+	
+	From ~\ref{pmf}, we get
+	\begin{align}
+		\pr{}{E} &= \pr{X}{0} + \pr{X}{3} &= 0.25\\
+		\pr{}{F} &= \pr{X}{2} + \pr{X}{3} &= 0.5\\
+		\pr{}{G} &= \pr{X}{0} + \pr{X}{1} + \pr{X}{2} &= 0.875
+	\end{align}
+	
+	Therefore, the probabilities of the events are :
+	
+	\begin{table}[h!]
+	
+		\caption{Probabilities}
+		
+		\include{tables/assig6_tab}
+		
+			\label{table}
+	
+	\end{table}
+	
+	Now, representing pairs of events with X,
+	
+	\begin{itemize}
+	
+		\item EF : $X = 3$
+		
+		\item FG : $X = 2$
+		
+		\item GE : $X = 0$
+		
+	\end{itemize}
+	
+	And their probabilities,
+	\begin{align}
+		\pr{}{EF} &= \pr{X}{3} &= 0.125 \\
+		\pr{}{FG} &= \pr{X}{2} &= 0.375 \\
+		\pr{}{GE} &= \pr{X}{0} &= 0.125
+	\end{align}
+	
+	Which are tabularised below.
+	
+	\begin{table}[h!]
+	
+		\caption{Probabilities}
+		
+		\include{tables/assig6_tab2}
+		
+			\label{table2}
+	
+	\end{table}
+
+	\newpage
+	Checking for independence,
+	
+	\begin{align}
+		\pr{}{E} \times \pr{}{F} &= 0.125 &= \pr{}{EF}\\
+		\pr{}{F} \times \pr{}{G} &= 0.4375 &\neq \pr{}{FG}\\
+		\pr{}{G} \times \pr{}{E} &= 0.21875 &\neq \pr{}{EG}
+	\end{align}
+	
+	Hence, the events (E and F) are independent, whereas the events (F and G) and the events (G and E) are dependent.
+				
+\end{document}
+	
+	
+	
+	
+	
+	
+	
