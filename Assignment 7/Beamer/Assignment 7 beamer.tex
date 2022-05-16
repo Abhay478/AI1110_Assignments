@@ -1,0 +1,184 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+
+\usepackage{polynom}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{bm}
+\usepackage[misc]{ifsym}
+%\setlength{\columnseprule}{1pt}
+%\def\columnseprulecolor{\color{blue}}
+
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[applemac]{inputenc}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  
+\usepackage{lscape}     
+\usepackage{tfrupee}
+\usepackage{parskip}
+
+\pagecolor{white}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+\DeclareMathOperator*{\pipe}{|}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}  
+\graphicspath{{./images/}}
+
+
+\begin{document}
+	\title{Assignment 7}
+		\author{ Abhay Shankar K : CS21BTECH11001}
+
+	\begin{frame}
+    		\titlepage 
+	\end{frame}
+
+
+	\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+	\providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
+	\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+	\newcommand{\req}{\noindent \textbf{Required: }}
+	\providecommand{\rpr}[2]{\ensuremath{P_{#1}\left(#2\right)}} %random variable notation
+	\providecommand{\spr}[1]{\ensuremath{P\left(#1\right)}} %simple notation
+	\providecommand{\cpr}[2]{\ensuremath{\spr{#1 \pipe #2}}} %conditional probability
+
+
+	\begin{frame}{Outline}
+    		\tableofcontents
+	\end{frame}
+
+
+	\section{Question}
+		\begin{frame}{Question}
+
+			\begin{block}{Exercise 13.3 : Question 2}
+			
+				A bag contains $4$ red and $4$ black balls, and another bag contains $2$ red and $6$ black balls. One of the bags is chosen at random and a ball is drawn from it which is found to be red. Find the probability that the ball is drawn from the first bag.
+			
+			\end{block}
+
+		\end{frame}
+
+
+	\section{Random Variable definition}
+		\begin{frame}{Definitions}
+
+			\begin{block}{X}
+			
+				Let the random variable X represent the bag chosen.
+				\begin{align}
+					X &= 0 \leftarrow \text{First bag} \nonumber \\
+					X &= 1 \leftarrow \text{Second bag}
+						\label{Xrange}
+				\end{align}
+
+			\end{block}
+
+			\begin{block}{Y}
+			
+				Let the random variable Y represent the colour of the ball chosen.
+				\begin{align}
+					Y &= 0 \leftarrow \text{Red ball} \nonumber \\
+					Y &= 1 \leftarrow \text{Black ball}
+						\label{Yrange}
+				\end{align}
+
+			\end{block}
+
+			\begin{block}{Reframing}
+			
+				\req \raggedright \cpr{\text{First Bag}}{\text{Red ball}} = \cpr{X = 0}{Y = 0}
+
+			\end{block}
+
+		\end{frame}
+
+	\section{Bayes' theorem}
+	
+		\begin{frame}{Bayes' theorem}
+		
+			The problem is a classic application of Bayes' theorem.
+			
+			\begin{block}{}
+			
+				Bayes' theorem states :
+				
+				\begin{align}
+					\frac{\cpr{A}{B}}{\cpr{B}{A}} = \frac{\spr{A}}{\spr{B}} 
+						\label{Bayes_thm}
+				\end{align}
+				
+				where A and B are any two events. 
+			\end{block}
+
+		\end{frame}
+
+	\section{Table}
+		\begin{frame}{Probabilities}
+	
+			\begin{table}[h!b]
+	
+				\centering
+				\input{tables/assig7_table}
+		
+				\label{table}
+		
+			\end{table}
+	
+			Using the formula
+			\begin{align}
+				\rpr{Y}{0} &= \rpr{X}{0} \times \cpr{Y = 0}{X = 0} \nonumber \\
+				&+ \rpr{X}{1} \times \cpr{Y = 0}{X = 1}
+					\label{prob_form}
+			\end{align}
+
+		\end{frame}
+
+	\section{Calculation}
+		\begin{frame}{Calculation}
+			Substituting the operational variables from the table  into equation ~\eqref{Bayes_thm} and subsequently rearranging,
+	
+	
+			\begin{align}
+				\frac{\cpr{X = 0}{Y = 0}}{\cpr{Y = 0}{X = 0}} &= \frac{\rpr{X}{0}}{\rpr{Y}{0}} \\
+					\nonumber \\
+				\implies \frac{\cpr{X = 0}{Y = 0}}{0.5} &= \frac{0.5}{0.375} \\
+					\nonumber \\
+				\implies \cpr{X = 0}{Y = 0} &= \frac{2}{3}
+					\label{soln}
+			\end{align}
+	
+	
+			Therefore, the probability that the ball is drawn from the first bag is $\underline{\frac{2}{3}}$ .
+		\end{frame}
+
+\end{document}
