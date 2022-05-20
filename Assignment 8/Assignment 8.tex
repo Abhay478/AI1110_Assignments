@@ -22,8 +22,6 @@
 
 \usepackage{bm}
 \usepackage[misc]{ifsym}
-%\setlength{\columnseprule}{1pt}
-%\def\columnseprulecolor{\color{blue}}
 
 \usepackage{longtable}
 \usepackage{enumitem}
@@ -91,26 +89,26 @@
 	}
 
 		
-	\bfr{Random Variables}{	
-	Let the random variable $X$ denote the largest number drawn.
+	% \bfr{Random Variables}{	
+	% Let the random variable $X$ denote the largest number drawn.
 	
-	\req 
+	% \req 
 	
-	\begin{enumerate}[label = \brak{\textbf{\roman*}}]
+	% \begin{enumerate}[label = \brak{\textbf{\roman*}}]
 	
-		\item \spr{A} = \rpr{X}{m}
+	% 	\item \spr{A} = \rpr{X}{m}
 	
-		\item \spr{B} = $\Sigma_{i = 1}^{m} \rpr{X}{i}$
+	% 	\item \spr{B} = $\Sigma_{i = 1}^{m} \rpr{X}{i}$
 		
-	\end{enumerate}
-	}
+	% \end{enumerate}
+	% }
 	
 	\bfr{Solution}{
 	Let $M$ be the event that $m$ is drawn.
-	Clearly, 
 	
+	Clearly, 
 	\begin{align}
-		\spr{A} = \rpr{X}{m} = \spr{MB} 
+		\spr{A} = \spr{MB} 
 			\label{form}
 	\end{align}	
 
@@ -142,6 +140,7 @@
 	}
 	
 	\bfr{Graphs}{
+	Taken $n = 10$ and $k = 3$.
 	\begin{figure}[h!]
 		\caption{Graph for event A}
 		
@@ -152,7 +151,7 @@
 	\begin{figure}[h!]
 		\caption{Graph for event B}
 		
-		\includegraphics[scale = 0.5]{assig8_pmf}
+		\includegraphics[scale = 0.5]{assig8_cdf}
 	\end{figure}
 
 	}
