@@ -1,4 +1,4 @@
-from matplotlib import pyplot as plt
+
 import numpy as np
 from scipy.stats import norm
 from scipy import integrate as teg
