@@ -15,6 +15,7 @@ n = teg.simpson(rv.pdf(x), x)
 n1 = teg.simpson(i, x)
 n2 = teg.simpson(ii, x)
 
+#Here, f(mu, sigma) represents the (normalized) Gaussian distribution with mean 'mu' and standard deviation 'sigma'.
 ax.plot(x, i / n1, label ='f(0, 0.3)')
 
 ax.plot(x, (ii/n2), label = '(1 + 4exp(x) * f(0, 0.3))*0.1618')
